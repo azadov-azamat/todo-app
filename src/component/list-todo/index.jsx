@@ -30,7 +30,7 @@ export default function ListTodo() {
             <ul className={"gap-4"}>
                 {todoList?.map((item, index) =>
                     <li key={index.toString()}
-                        className={"flex justify-between p-4 items-center w-[687px] h-14 shadow shadow-input text-overpass bg-white"}>
+                        className={"flex justify-between p-4 items-center w-full h-14 shadow shadow-input text-overpass bg-white"}>
                         <span>{item?.text}</span>
                         <div className={"flex gap-2"}>
                             <BiTrash onClick={() => deleteTodo(item)}
