@@ -15,7 +15,9 @@ export default function CreateTodo() {
 
     const formik = useFormik({
         validationSchema: ValidateSchema,
-        initialValues: {},
+        initialValues: {
+            text: ''
+        },
         onSubmit: (val, {resetForm}) => {
             if (byId === null) {
                 dispatch(red.createTodo(val)).then(() => {
@@ -45,7 +47,7 @@ export default function CreateTodo() {
                 value={formik.values?.text}
                 onChange={formik.handleChange}
             />
-            <button type={"reset"} className={"w-[85px] h-14 border border-red bg-red"}
+            <button type={"submit"} className={"w-[85px] h-14 border border-red bg-red"}
                     disabled={!formik.isValid || !formik.dirty}>Saqlash
             </button>
         </form>
